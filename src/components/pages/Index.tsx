@@ -55,7 +55,7 @@ const Tag = styled.span`
 const BlogList = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 10px;
 `
 
