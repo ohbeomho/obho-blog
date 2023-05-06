@@ -8,7 +8,7 @@ export default function ({ children }: PropsWithChildren) {
       <header>
         <Navbar>
           <Link to="/" className="brand">
-            OhBeomho's Blog
+            Obho Blog
           </Link>
         </Navbar>
       </header>
