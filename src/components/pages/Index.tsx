@@ -3,6 +3,7 @@ import Layout from "../Layout"
 import { useEffect, useState } from "react"
 import { Blog, getRecentBlogs } from "../../utils/blog"
 import { useNavigate } from "react-router-dom"
+import Button from "../Button.styled"
 
 export default function () {
   const [recentBlogs, setRecentBlogs] = useState<Blog[]>()
@@ -25,17 +26,29 @@ export default function () {
       </p>
       <h3 style={{ marginTop: 60 }}>최근 올라온 글</h3>
       {recentBlogs && (
-        <BlogList>
+        <List>
           {recentBlogs.map((blog, index) => (
-            <BlogItem key={index} onClick={() => navigate(`/view/${blog.id}`)}>
+            <Card key={index} onClick={() => navigate(`/blogs/${blog.id}`)}>
               <div className="title">{blog.attributes.title}</div>
-              <div className="write-date">
+              <div className="sub">
                 {new Date(blog.attributes.writeDate).toLocaleDateString("ko-KR")}
               </div>
-            </BlogItem>
+            </Card>
           ))}
-        </BlogList>
+        </List>
       )}
+      <Button onClick={() => navigate("/blogs")}>전체 글 보기</Button>
+      <h3 style={{ marginTop: 60 }}>튜토리얼</h3>
+      <List>
+        <Card onClick={() => navigate("/tutorials/js")}>
+          <div className="title">JavaScript 튜토리얼</div>
+          <div className="sub">웹사이트 만들 때 필수인 JS 를 배워봅시다!</div>
+        </Card>
+        <Card onClick={() => navigate("/tutorials/ts")}>
+          <div className="title">TypeScript 튜토리얼</div>
+          <div className="sub">JS 의 슈퍼셋인 TS 를 배워봅시다!</div>
+        </Card>
+      </List>
     </Layout>
   )
 }
@@ -52,30 +65,30 @@ const Tag = styled.span`
   }
 `
 
-const BlogList = styled.div`
+const List = styled.div`
   display: flex;
   justify-content: center;
   align-items: stretch;
   gap: 10px;
 `
 
-const BlogItem = styled.div`
+const Card = styled.div`
   padding: 15px;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   user-select: none;
   cursor: pointer;
   transition: all 0.2s;
+  width: 220px;
+  word-break: break-all;
 
   & .title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
-    max-width: 250px;
-    word-break: break-all;
   }
 
-  & .write-date {
+  & .sub {
     color: rgb(100, 100, 100);
     float: right;
   }

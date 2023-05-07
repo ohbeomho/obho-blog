@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Blog, getBlog } from "../../utils/blog"
 import Layout from "../Layout"
+import Button from "../Button.styled"
 
 export default function () {
   const { id } = useParams()
@@ -28,13 +29,14 @@ export default function () {
       </div>
       <hr style={widthStyle} />
       <div style={{ ...widthStyle, wordBreak: "break-all" }}>
-        <blog.content></blog.content>
+        <blog.content />
       </div>
-      <button onClick={() => navigate("/")}>메인 페이지</button>
+      <Button onClick={() => navigate("/")}>메인 페이지</Button>
     </Layout>
   ) : error ? (
     <Layout>
       <div style={{ color: "rgb(200, 0, 0)" }}>오류가 발생하였습니다.</div>
+      <Button onClick={() => navigate("/")}>메인 페이지</Button>
     </Layout>
   ) : (
     <Layout>로딩중...</Layout>

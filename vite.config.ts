@@ -8,7 +8,14 @@ export default defineConfig({
     react(),
     Markdown({
       wrapperComponentName: "ReactMarkdown",
-      wrapperComponentPath: "./src/blogs"
+      wrapperComponentPath: "./src/blogs",
+      markdownItOptions: {
+        html: true
+      },
+      importComponentsPath: {
+        Cb: "./src/components/CodeBlock.tsx",
+        Cbs: "./src/components/CodeBlockSpan.tsx"
+      }
     })
   ]
 })

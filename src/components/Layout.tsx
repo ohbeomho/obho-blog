@@ -55,7 +55,7 @@ const Main = styled.main`
 `
 
 const Footer = styled.footer`
-  background-color: rgb(120, 120, 120);
+  background-color: rgb(150, 150, 150);
   color: rgb(40, 40, 40);
   text-align: center;
 `
