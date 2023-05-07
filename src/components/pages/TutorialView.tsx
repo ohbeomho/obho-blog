@@ -20,6 +20,8 @@ export default function () {
       })
   }, [])
 
+  const widthStyle: React.CSSProperties = { maxWidth: 600, width: "95%" }
+
   return tutorial ? (
     <Layout>
       <h1>{tutorial.attributes.title}</h1>
@@ -27,8 +29,8 @@ export default function () {
         <div>{kind === "js" ? "JavaScript 튜토리얼" : "TypeScript 튜토리얼"}</div>
         <div>{new Date(tutorial.attributes.writeDate).toLocaleDateString("ko-KR")}</div>
       </Info>
-      <hr style={{ maxWidth: 600, width: "100%" }} />
-      <div style={{ maxWidth: 600, width: "100%", wordBreak: "break-all" }}>
+      <hr style={widthStyle} />
+      <div style={{ ...widthStyle, wordBreak: "break-all" }}>
         <tutorial.content />
       </div>
       <Button onClick={() => navigate("/")}>메인 페이지</Button>
@@ -45,7 +47,7 @@ export default function () {
 
 const Info = styled.div`
   max-width: 600px;
-  width: 100%;
+  width: 95%;
   display: flex;
   justify-content: space-between;
   align-items: center;

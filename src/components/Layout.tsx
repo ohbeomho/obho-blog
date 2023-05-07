@@ -52,6 +52,7 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 40px 0;
 `
 
 const Footer = styled.footer`

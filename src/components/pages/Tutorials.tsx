@@ -53,7 +53,7 @@ const List = styled.ul`
   padding: 0;
   margin: 0;
   max-width: 600px;
-  width: 100%;
+  width: 95%;
 `
 
 const ListItem = styled.li`

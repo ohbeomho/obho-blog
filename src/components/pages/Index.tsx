@@ -70,6 +70,8 @@ const List = styled.div`
   justify-content: center;
   align-items: stretch;
   gap: 10px;
+  max-width: 600px;
+  width: 95%;
 `
 
 const Card = styled.div`

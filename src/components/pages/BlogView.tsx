@@ -19,7 +19,7 @@ export default function () {
       })
   }, [])
 
-  const widthStyle: React.CSSProperties = { maxWidth: 600, width: "100%" }
+  const widthStyle: React.CSSProperties = { maxWidth: 600, width: "95%" }
 
   return blog ? (
     <Layout>
