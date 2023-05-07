@@ -13,8 +13,8 @@ export default defineConfig({
         html: true
       },
       importComponentsPath: {
-        Cb: "./src/components/CodeBlock.tsx",
-        Cbs: "./src/components/CodeBlockSpan.tsx"
+        Cb: "./src/components/markdown/CodeBlock.tsx",
+        Cbs: "./src/components/markdown/CodeBlockSpan.tsx"
       }
     })
   ]
