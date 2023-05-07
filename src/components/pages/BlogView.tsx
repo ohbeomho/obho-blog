@@ -1,25 +1,25 @@
-import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
-import { Blog, getBlog } from "../../utils/blog"
-import Layout from "../Layout"
-import Button from "../Button.styled"
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { Blog, getBlog } from "../../utils/blog";
+import Layout from "../Layout";
+import Button from "../Button.styled";
 
 export default function () {
-  const { id } = useParams()
-  const navigate = useNavigate()
-  const [blog, setBlog] = useState<Blog>()
-  const [error, setError] = useState(false)
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [blog, setBlog] = useState<Blog>();
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     getBlog(Number(id))
       .then((blog) => setBlog(blog))
       .catch((err) => {
-        setError(true)
-        console.error(err)
-      })
-  }, [])
+        setError(true);
+        console.error(err);
+      });
+  }, []);
 
-  const widthStyle: React.CSSProperties = { maxWidth: 600, width: "95%" }
+  const widthStyle: React.CSSProperties = { maxWidth: 600, width: "95%" };
 
   return blog ? (
     <Layout>
@@ -40,5 +40,5 @@ export default function () {
     </Layout>
   ) : (
     <Layout>로딩중...</Layout>
-  )
+  );
 }

@@ -1,9 +1,9 @@
-import { Route, Routes } from "react-router-dom"
-import Index from "./pages/Index"
-import BlogView from "./pages/BlogView"
-import Tutorials from "./pages/Tutorials"
-import TutorialView from "./pages/TutorialView"
-import Blogs from "./pages/Blogs"
+import { Route, Routes } from "react-router-dom";
+import Index from "./pages/Index";
+import BlogView from "./pages/BlogView";
+import Tutorials from "./pages/Tutorials";
+import TutorialView from "./pages/TutorialView";
+import Blogs from "./pages/Blogs";
 
 export default function () {
   return (
@@ -14,5 +14,5 @@ export default function () {
       <Route path="/tutorials/:kind" element={<Tutorials />}></Route>
       <Route path="/tutorials/:kind/:id" element={<TutorialView />}></Route>
     </Routes>
-  )
+  );
 }

@@ -1,17 +1,17 @@
-import styled from "styled-components"
-import Layout from "../Layout"
-import { useEffect, useState } from "react"
-import { Blog, getRecentBlogs } from "../../utils/blog"
-import { useNavigate } from "react-router-dom"
-import Button from "../Button.styled"
+import styled from "styled-components";
+import Layout from "../Layout";
+import { useEffect, useState } from "react";
+import { Blog, getRecentBlogs } from "../../utils/blog";
+import { useNavigate } from "react-router-dom";
+import Button from "../Button.styled";
 
 export default function () {
-  const [recentBlogs, setRecentBlogs] = useState<Blog[]>()
-  const navigate = useNavigate()
+  const [recentBlogs, setRecentBlogs] = useState<Blog[]>();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    getRecentBlogs().then((blogs) => setRecentBlogs(blogs))
-  }, [])
+    getRecentBlogs().then((blogs) => setRecentBlogs(blogs));
+  }, []);
 
   return (
     <Layout>
@@ -50,7 +50,7 @@ export default function () {
         </Card>
       </List>
     </Layout>
-  )
+  );
 }
 
 const Tag = styled.span`
@@ -63,7 +63,7 @@ const Tag = styled.span`
   &::before {
     content: "#";
   }
-`
+`;
 
 const List = styled.div`
   display: flex;
@@ -72,7 +72,7 @@ const List = styled.div`
   gap: 10px;
   max-width: 600px;
   width: 95%;
-`
+`;
 
 const Card = styled.div`
   padding: 15px;
@@ -99,4 +99,4 @@ const Card = styled.div`
     background-color: rgba(0, 0, 0, 0.05);
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
   }
-`
+`;

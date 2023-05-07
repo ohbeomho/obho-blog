@@ -1,5 +1,5 @@
-import { PropsWithChildren } from "react"
+import { PropsWithChildren } from "react";
 
 export default function ({ children }: PropsWithChildren) {
-  return <div>{children}</div>
+  return <div>{children}</div>;
 }

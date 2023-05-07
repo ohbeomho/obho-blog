@@ -1,6 +1,6 @@
-import { defineConfig } from "vite"
-import react from "@vitejs/plugin-react"
-import Markdown from "@pity/vite-plugin-react-markdown"
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import Markdown from "@pity/vite-plugin-react-markdown";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,4 +18,4 @@ export default defineConfig({
       }
     })
   ]
-})
+});

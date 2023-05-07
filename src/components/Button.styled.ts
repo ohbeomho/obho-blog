@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const Button = styled.button`
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -14,6 +14,6 @@ const Button = styled.button`
     background-color: rgb(180, 180, 180);
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
   }
-`
+`;
 
-export default Button
+export default Button;

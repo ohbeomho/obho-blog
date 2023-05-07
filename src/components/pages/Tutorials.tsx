@@ -1,24 +1,24 @@
-import { useNavigate, useParams } from "react-router-dom"
-import Layout from "../Layout"
-import { useEffect, useState } from "react"
-import { Tutorial, TutorialKind, getTutorials } from "../../utils/tutorial"
-import styled from "styled-components"
-import Button from "../Button.styled"
+import { useNavigate, useParams } from "react-router-dom";
+import Layout from "../Layout";
+import { useEffect, useState } from "react";
+import { Tutorial, TutorialKind, getTutorials } from "../../utils/tutorial";
+import styled from "styled-components";
+import Button from "../Button.styled";
 
 export default function () {
-  const { kind } = useParams()
-  const navigate = useNavigate()
-  const [tutorials, setTutorials] = useState<Tutorial[]>()
-  const [error, setError] = useState(false)
+  const { kind } = useParams();
+  const navigate = useNavigate();
+  const [tutorials, setTutorials] = useState<Tutorial[]>();
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     getTutorials(kind as TutorialKind)
       .then((tutorials) => setTutorials(tutorials))
       .catch((err) => {
-        setError(true)
-        console.error(err)
-      })
-  }, [])
+        setError(true);
+        console.error(err);
+      });
+  }, []);
 
   return tutorials ? (
     <Layout>
@@ -45,7 +45,7 @@ export default function () {
     </Layout>
   ) : (
     <Layout>로딩중...</Layout>
-  )
+  );
 }
 
 const List = styled.ul`
@@ -54,7 +54,7 @@ const List = styled.ul`
   margin: 0;
   max-width: 600px;
   width: 95%;
-`
+`;
 
 const ListItem = styled.li`
   padding: 15px;
@@ -91,4 +91,4 @@ const ListItem = styled.li`
     background-color: rgba(0, 0, 0, 0.05);
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
   }
-`
+`;

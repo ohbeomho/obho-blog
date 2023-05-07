@@ -1,26 +1,26 @@
-import { useNavigate, useParams } from "react-router-dom"
-import Layout from "../Layout"
-import { Tutorial, TutorialKind, getTutorial } from "../../utils/tutorial"
-import { useEffect, useState } from "react"
-import styled from "styled-components"
-import Button from "../Button.styled"
+import { useNavigate, useParams } from "react-router-dom";
+import Layout from "../Layout";
+import { Tutorial, TutorialKind, getTutorial } from "../../utils/tutorial";
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import Button from "../Button.styled";
 
 export default function () {
-  const { kind, id } = useParams()
-  const navigate = useNavigate()
-  const [tutorial, setTutorial] = useState<Tutorial>()
-  const [error, setError] = useState(false)
+  const { kind, id } = useParams();
+  const navigate = useNavigate();
+  const [tutorial, setTutorial] = useState<Tutorial>();
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     getTutorial(kind as TutorialKind, Number(id))
       .then((tutorial) => setTutorial(tutorial))
       .catch((err) => {
-        setError(false)
-        console.error(err)
-      })
-  }, [])
+        setError(false);
+        console.error(err);
+      });
+  }, []);
 
-  const widthStyle: React.CSSProperties = { maxWidth: 600, width: "95%" }
+  const widthStyle: React.CSSProperties = { maxWidth: 600, width: "95%" };
 
   return tutorial ? (
     <Layout>
@@ -42,7 +42,7 @@ export default function () {
     </Layout>
   ) : (
     <Layout>로딩중...</Layout>
-  )
+  );
 }
 
 const Info = styled.div`
@@ -52,4 +52,4 @@ const Info = styled.div`
   justify-content: space-between;
   align-items: center;
   color: rgb(100, 100, 100);
-`
+`;

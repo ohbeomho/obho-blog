@@ -1,23 +1,23 @@
-import { useEffect, useState } from "react"
-import Layout from "../Layout"
-import { Blog, getBlogs } from "../../utils/blog"
-import { useNavigate } from "react-router-dom"
-import styled from "styled-components"
-import Button from "../Button.styled"
+import { useEffect, useState } from "react";
+import Layout from "../Layout";
+import { Blog, getBlogs } from "../../utils/blog";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import Button from "../Button.styled";
 
 export default function () {
-  const [blogs, setBlogs] = useState<Blog[]>()
-  const [error, setError] = useState(false)
-  const navigate = useNavigate()
+  const [blogs, setBlogs] = useState<Blog[]>();
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getBlogs()
       .then((blogs) => setBlogs(blogs))
       .catch((err) => {
-        setError(true)
-        console.error(err)
-      })
-  }, [])
+        setError(true);
+        console.error(err);
+      });
+  }, []);
 
   return blogs ? (
     <Layout>
@@ -41,7 +41,7 @@ export default function () {
     </Layout>
   ) : (
     <Layout>로딩중...</Layout>
-  )
+  );
 }
 
 const List = styled.ul`
@@ -50,7 +50,7 @@ const List = styled.ul`
   margin: 0;
   max-width: 600px;
   width: 95%;
-`
+`;
 
 const ListItem = styled.li`
   padding: 15px;
@@ -79,4 +79,4 @@ const ListItem = styled.li`
     background-color: rgba(0, 0, 0, 0.05);
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
   }
-`
+`;

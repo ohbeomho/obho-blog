@@ -1,6 +1,6 @@
-import { PropsWithChildren } from "react"
-import { Link } from "react-router-dom"
-import styled from "styled-components"
+import { PropsWithChildren } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 export default function ({ children }: PropsWithChildren) {
   return (
@@ -22,14 +22,14 @@ export default function ({ children }: PropsWithChildren) {
         </p>
       </Footer>
     </Wrapper>
-  )
+  );
 }
 
 const Wrapper = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-`
+`;
 
 const Navbar = styled.nav`
   padding: 10px;
@@ -44,7 +44,7 @@ const Navbar = styled.nav`
     color: black;
     text-decoration: none;
   }
-`
+`;
 
 const Main = styled.main`
   flex: 1;
@@ -53,10 +53,10 @@ const Main = styled.main`
   justify-content: center;
   align-items: center;
   padding: 40px 0;
-`
+`;
 
 const Footer = styled.footer`
   background-color: rgb(150, 150, 150);
   color: rgb(40, 40, 40);
   text-align: center;
-`
+`;
