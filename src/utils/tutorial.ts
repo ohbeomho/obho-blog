@@ -19,7 +19,7 @@ export async function getTutorials(kind: TutorialKind): Promise<Tutorial[]> {
   const count = kind === "js" ? JS_TUTORIAL_COUNT : TS_TUTORIAL_COUNT;
   const promises = [];
 
-  for (let i = 0; i < count; i++) {
+  for (let i = count - 1; i >= 0; i--) {
     promises.push(getTutorial(kind, i));
   }
 

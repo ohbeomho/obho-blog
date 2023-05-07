@@ -15,10 +15,10 @@ export async function getBlog(id: number): Promise<Blog> {
 }
 
 export async function getRecentBlogs(): Promise<Blog[]> {
-  const start = BLOG_COUNT >= 3 ? BLOG_COUNT - 3 : 0;
+  const end = BLOG_COUNT >= 3 ? BLOG_COUNT - 3 : 0;
   const promises = [];
 
-  for (let i = start; i < BLOG_COUNT; i++) {
+  for (let i = BLOG_COUNT - 1; i >= end; i--) {
     promises.push(getBlog(i));
   }
 
@@ -29,7 +29,7 @@ export async function getRecentBlogs(): Promise<Blog[]> {
 export async function getBlogs(): Promise<Blog[]> {
   const promises = [];
 
-  for (let i = 0; i < BLOG_COUNT; i++) {
+  for (let i = BLOG_COUNT - 1; i >= 0; i--) {
     promises.push(getBlog(i));
   }
 
