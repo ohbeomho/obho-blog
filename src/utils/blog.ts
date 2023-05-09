@@ -1,4 +1,4 @@
-const BLOG_COUNT = 2;
+const BLOG_COUNT = 3;
 
 export type Blog = {
   attributes: {
