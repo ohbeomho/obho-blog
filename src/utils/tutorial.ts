@@ -1,6 +1,6 @@
 import { Blog } from "./blog";
 
-const JS_TUTORIAL_COUNT = 1;
+const JS_TUTORIAL_COUNT = 2;
 const TS_TUTORIAL_COUNT = 1;
 
 export type TutorialKind = "js" | "ts";

@@ -63,6 +63,7 @@ const ListItem = styled.li`
   user-select: none;
   cursor: pointer;
   transition: all 0.2s;
+  margin: 5px 0;
 
   & .title {
     font-size: 24px;
